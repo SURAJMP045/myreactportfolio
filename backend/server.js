@@ -29,6 +29,10 @@ transporter.verify((err) => {
   }
 });
 
+app.get('/', (req, res) => {
+  res.send('Backend server is running!');
+});
+
 app.post('/send', async (req, res) => {
   const { name, email, message } = req.body;
 
