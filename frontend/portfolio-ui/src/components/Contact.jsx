@@ -10,17 +10,17 @@ const Contact = () => {
     message: "",
   });
 
-  // Handle input change
+  const API_URL = process.env.REACT_APP_API_URL || "http://localhost:5000";
+
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  // Handle form submission
   const handleSubmit = async (e) => {
     e.preventDefault();
 
     try {
-      const res = await fetch("http://localhost:5000/send", {
+      const res = await fetch(`${API_URL}/send`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formData),
@@ -29,13 +29,13 @@ const Contact = () => {
       const data = await res.json();
 
       if (data.success) {
-        toast.success(" Message sent successfully!", {
+        toast.success("Message sent successfully!", {
           position: "bottom-center",
           autoClose: 3000,
         });
         setFormData({ name: "", email: "", message: "" });
       } else {
-        toast.error(" Failed to send message", {
+        toast.error("Failed to send message", {
           position: "bottom-center",
           autoClose: 3000,
         });
@@ -81,7 +81,6 @@ const Contact = () => {
         </form>
       </center>
 
-      {/* Toast container for notifications */}
       <ToastContainer />
     </section>
   );
