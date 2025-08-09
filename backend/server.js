@@ -4,7 +4,13 @@ const nodemailer = require('nodemailer');
 const cors = require('cors');
 
 const app = express();
-app.use(cors());
+
+app.use(cors({
+  origin: "https://myreactportfolio-7jn7.vercel.app",
+  methods: ["GET", "POST"],
+  allowedHeaders: ["Content-Type"]
+}));
+
 app.use(express.json());
 
 const transporter = nodemailer.createTransport({
@@ -15,16 +21,24 @@ const transporter = nodemailer.createTransport({
   }
 });
 
-transporter.verify((err, success) => {
-  if (err) console.error("Mailer verify error:", err);
-  else console.log("Mailer ready");
+transporter.verify((err) => {
+  if (err) {
+    console.error("Mailer verify error:", err);
+  } else {
+    console.log("Mailer is ready to send messages");
+  }
 });
 
 app.post('/send', async (req, res) => {
   const { name, email, message } = req.body;
 
+  if (!name || !email || !message) {
+    return res.status(400).json({ success: false, error: "All fields are required" });
+  }
+
   const mailOptions = {
-    from: email,
+    from: process.env.GMAIL_USER,
+    replyTo: email,
     to: process.env.GMAIL_USER,
     subject: `Contact from ${name}`,
     text: `Name: ${name}\nEmail: ${email}\n\n${message}`
@@ -32,11 +46,12 @@ app.post('/send', async (req, res) => {
 
   try {
     await transporter.sendMail(mailOptions);
-    res.json({ success: true });
+    res.json({ success: true, message: "Email sent successfully" });
   } catch (err) {
-    console.error(err);
-    res.status(500).json({ success: false, error: err.message });
+    console.error("Email send error:", err);
+    res.status(500).json({ success: false, error: "Failed to send email" });
   }
 });
 
-app.listen(5000, () => console.log("Server running on :5000"));
+const PORT = process.env.PORT || 5000;
+app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
