@@ -1,0 +1,26 @@
+.features {
+  display: flex;
+  justify-content: space-around;
+  padding: 3rem 5%;
+  background: #f8f8f8;
+  text-align: center;
+}
+
+.feature {
+  flex: 1;
+  margin: 0 1rem;
+}
+
+.feature img {
+  height: 45px;
+}
+
+.feature h4 {
+  font-size: 1.6rem;
+  margin-bottom: 0.5rem;
+}
+
+.feature p {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+}

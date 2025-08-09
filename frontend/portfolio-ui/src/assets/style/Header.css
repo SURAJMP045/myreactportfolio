@@ -1,0 +1,181 @@
+header.hero {
+  background-image: url(../Desktop.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 2rem 5%;
+  height: auto;
+  animation: fadeIn 1.2s ease;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.logo {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #ff5722;
+}
+
+.navbar {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.navbar a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+  transition: color 0.3s;
+  font-size: 1.2rem;
+}
+
+.navbar a.active,
+.navbar a:hover {
+  color: #ff5722;
+}
+
+.btn,
+.btn-nav {
+  padding: 0.6rem 1.2rem;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.3s;
+}
+
+.btn {
+  background: #ff5722;
+  color: #fff5e1;
+}
+
+.btn:hover {
+  background: #e64a19;
+}
+
+.btn-nav {
+  background: transparent;
+  color: #e64a19;
+  border: 2px solid #e64a19;
+}
+
+.btn-nav:hover {
+  background: #e64a19;
+  color: #fff;
+}
+
+.hero-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
+  gap: 2rem;
+  padding: 2rem 0;
+  animation: slideInUp 1s ease-in;
+}
+
+.hero-content h3 {
+  font-size: 2rem;
+  color: #ff5722;
+}
+
+.hero-content h1 {
+  font-size: 4rem;
+  margin: 0.5rem 0;
+}
+
+.hero-content p {
+  font-size: 1.3rem;
+  margin: 0.5rem 0;
+}
+
+.hero-content .highlight {
+  color: #03a9f4;
+}
+
+.hero-content .right .profile-pic {
+  width: 100%;
+  max-width: 400px;
+  animation: fadeIn 2s ease-in;
+}
+
+.social-links {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+  margin-top: 1rem;
+  flex-wrap: wrap;
+}
+
+.social-links a img {
+  height: 35px;
+  width: 35px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.social-links a:hover img {
+  transform: scale(1.2) rotate(10deg);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@media (max-width: 1024px) {
+  .hero-content {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .navbar {
+    justify-content: center;
+  }
+
+  nav {
+    flex-direction: column;
+    gap: 10px;
+  }
+}
+
+@media (max-width: 600px) {
+  .hero-content h1 {
+    font-size: 2rem;
+  }
+
+  .btn,
+  .btn-nav {
+    padding: 0.4rem 1rem;
+    font-size: 0.9rem;
+  }
+
+  .social-links {
+    justify-content: center;
+  }
+
+  .social-links a img {
+    height: 30px;
+    width: 30px;
+  }
+}

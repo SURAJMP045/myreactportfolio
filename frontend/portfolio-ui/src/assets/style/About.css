@@ -1,0 +1,54 @@
+.about {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 4rem 5%;
+  align-items: center;
+  gap: 2rem;
+}
+
+.about .left,
+.about .right {
+  flex: 1;
+  min-width: 300px;
+}
+
+.about .left img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.about .years,
+.about .projects {
+  font-size: 1.1rem;
+  margin-top: 1rem;
+  font-weight: bold;
+  color: #ff5722;
+}
+
+.about .right h4 {
+  color: #ff5722;
+}
+
+.about .right h4 {
+  font-size: 2rem;
+  margin: 0.5rem 0;
+}
+
+.about .right p {
+  margin: 1rem 0;
+  font-size: 1.2rem;
+}
+
+.btn {
+  background: #ff5722;
+  color: #fff5e1;
+  padding: 1rem 1.6rem;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.3s;
+}
+
+.btn:hover {
+  background: #e64a19;
+}

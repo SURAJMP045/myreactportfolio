@@ -1,0 +1,44 @@
+footer {
+  background-color: #222;
+  color: #eee;
+  padding: 40px 20px 20px;
+}
+
+footer ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 auto 20px;
+  max-width: 800px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  text-align: center;
+}
+
+footer ul li {
+  font-size: 1.2rem;
+}
+
+footer ul li a {
+  text-decoration: none;
+  color: #ff5722;
+  transition: color 0.3s;
+}
+
+footer ul li a:hover {
+  color: #fff;
+}
+
+footer center p {
+  font-size: 0.9rem;
+  color: #ccc;
+  margin-top: 10px;
+}
+
+@media (max-width: 600px) {
+  footer ul {
+    flex-direction: column;
+    gap: 10px;
+  }
+}

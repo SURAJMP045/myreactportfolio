@@ -1,0 +1,102 @@
+#education {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #f8f8f8;
+  padding: 40px 5%;
+}
+
+.section-p1 {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: bold;
+  color: #ff5722;
+  padding-bottom: 20px;
+}
+
+.education-container {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.education-card {
+  background: transparent;
+  width: 450px;
+  height: 180px;
+  perspective: 1000px;
+}
+
+.education-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+.education-card:hover .education-inner {
+  transform: rotateY(180deg);
+}
+
+.education-front,
+.education-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  border-radius: 10px;
+  padding: 15px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.education-front {
+  background: #ffffff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.education-front img {
+  margin-bottom: 10px;
+}
+
+.education-text .year {
+  color: rgb(135, 61, 0);
+  font-weight: 500;
+  font-size: smaller;
+}
+
+.education-text .college {
+  font-size: large;
+  font-weight: bold;
+}
+
+.education-text .place {
+  color: rgb(130, 130, 130);
+  font-size: smaller;
+}
+
+.education-back {
+  background: linear-gradient(135deg, #ff8f6d, #1f4818);
+  color: white;
+  transform: rotateY(180deg);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 20px;
+}
+
+.education-back h4 {
+  margin-bottom: 10px;
+  font-size: 1.1rem;
+}
+
+.education-back p {
+  font-size: 0.9rem;
+  line-height: 1.4;
+}
