@@ -61,11 +61,11 @@
   color: #b22485;
 }
 
-.card-item h3 {
+.card-item h4 {
   color: #000;
-  font-size: 1.438rem;
+  font-size: 1rem;
   margin-top: 28px;
-  font-weight: 600;
+  font-weight: 500;
 }
 
 .card-item .arrow {
